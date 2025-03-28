@@ -4,17 +4,10 @@ public class Circle {
     private int radius;
 
     public Circle(Point center, int radius) {
-        this.center = center;
+        super(center);
         this.radius = radius;
     }
 
-    public Point getCenter() {
-        return center;
-    }
-
-    public void setCenter(Point center) {
-        this.center = center;
-    }
 
     public int getRadius() {
         return radius;
@@ -28,5 +21,16 @@ public class Circle {
             this.radius = radius;
 
         }
+
+    }
+
+    }
+
+    @Override
+    public String toString() {
+        return "Circle{" +
+                "center=" + center +
+                ", radius=" + radius +
+                '}';
     }
 }

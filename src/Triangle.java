@@ -1,18 +1,18 @@
-public class Rectangle extends Shape {
+public class Triangle extends Shape{
 
     private Point topLeft;
-    private int sideA , sideB;
-    public static int counter = 0;
-    public int coubterForobject = 0;
+    private double sideA , sideB;
+    public static double counter = 0;
+    public double  coubterForobject = 0;
 
 
-    public Rectangle(Point topLeft, int sideA, int sideB) {
+    public Triangle(Point topLeft, int sideA, int sideB) {
         super(topLeft);
         setSideA(sideA);
         setSideB(sideB);
     }
 
-    public Rectangle(Point topLeft, int sideA) {
+    public Triangle(Point topLeft, int sideA) {
         this.topLeft = topLeft;
         setSideA(sideA);
         setSideB(sideA);
@@ -26,7 +26,7 @@ public class Rectangle extends Shape {
         this.topLeft = topLeft;
     }
 
-    public int getSideA() {
+    public double getSideA() {
         return sideA;
     }
 
@@ -39,7 +39,7 @@ public class Rectangle extends Shape {
         }
     }
 
-    public int getSideB() {
+    public double getSideB() {
         return sideB;
     }
 
@@ -50,16 +50,29 @@ public class Rectangle extends Shape {
             this.sideB = sideB;
         }
     }
-    public int perimeter(){
-        return 2 * (sideA + sideB);
+
+    public double getSideC() {
+        return sideC;
     }
-    public int area(){
-        return sideA * sideB;
+
+    public void setSideB(Int sideC) {
+        if (sideC < 0) {
+            throw new IllegalArgumentException("Side cant be negative")
+        } else {
+            this.sideC = sideC;
+        }
+    }
+    public double perimeter(){
+        return  (sideA + sideB+ sideC);
+    }
+    public double area(){
+        return (sideA*sideB)/2;
     }
 
     @Override
     public int perimeter(){
 
-        return 2*sideA + 2*sideB;
+        return sideA + sideB+ sideC;
     }
+}
 }
